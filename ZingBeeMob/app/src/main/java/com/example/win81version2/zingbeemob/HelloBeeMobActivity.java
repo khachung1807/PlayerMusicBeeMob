@@ -10,22 +10,22 @@ public class HelloBeeMobActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello_bee_mob);
-        Thread bamgio=new Thread(){
+        Thread timeSleep=new Thread(){
             public void run()
             {
                 try {
-                    sleep(10000);
+                    sleep(2000);
                 } catch (Exception e) {
 
                 }
                 finally
                 {
-                    Intent activitymoi=new Intent(HelloBeeMobActivity.this, PlayMusicActivity.class);
-                    startActivity(activitymoi);
+                    Intent intent=new Intent(HelloBeeMobActivity.this, PlayMusicActivity.class);
+                    startActivity(intent);
                 }
             }
         };
-        bamgio.start();
+        timeSleep.start();
     }
 
     @Override

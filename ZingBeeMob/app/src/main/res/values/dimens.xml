@@ -7,5 +7,6 @@
     <dimen name="layout_weight">2dp</dimen>
     <dimen name="text_big_size">20sp</dimen>
     <dimen name="layout_marginRight">50dp</dimen>
+    <dimen name="layout_marginLeft">20dp</dimen>
     <dimen name="text_too_big">60sp</dimen>
 </resources>

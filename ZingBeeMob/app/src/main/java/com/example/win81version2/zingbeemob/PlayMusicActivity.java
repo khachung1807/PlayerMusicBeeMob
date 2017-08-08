@@ -1,6 +1,8 @@
 package com.example.win81version2.zingbeemob;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,10 +14,16 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.File;
+import java.util.ArrayList;
+
 public class PlayMusicActivity extends AppCompatActivity {
     ImageButton imageButtonPlay, imageButtonNext, imageButtonPrevious, imageButtonRun;
     TextView textNameSong, textAuthorSong, textSingerSong, textStartTimeSong, textStopTimeSong;
     SeekBar seekBarTimeSong;
+    ArrayList<File> mySong;
+    MediaPlayer mediaPlayer;
+
     private double startTimeSong= 0;
     private double stopTimeSong= 0;
     private Handler handler= new Handler();
@@ -26,6 +34,14 @@ public class PlayMusicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_music);
+        Intent intent= getIntent();
+        Bundle bundle= intent.getExtras();
+        mySong= (ArrayList) bundle.getParcelableArrayList("songList");
+        int position= bundle.getInt("position", 0);
+
+        Uri uri= Uri.parse(mySong.get(position).toString());
+        mediaPlayer= MediaPlayer.create(getApplicationContext(), uri);
+        mediaPlayer.start();
         addControls();
         addEvents();
     }
@@ -77,6 +93,7 @@ public class PlayMusicActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.menu_folder){
             Intent intent= new Intent(PlayMusicActivity.this, ShowAllMusicActivity.class);
             startActivity(intent);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

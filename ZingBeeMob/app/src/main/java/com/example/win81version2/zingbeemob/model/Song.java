@@ -1,13 +1,10 @@
 package com.example.win81version2.zingbeemob.model;
 
-import java.io.Serializable;
-
 /**
  * Created by Win 8.1 Version 2 on 8/7/2017.
  */
 
-public class Song implements Serializable{
-    private int id;
+public class Song{
     private String nameSong;
     private String authorSong;
     private String singerSong;
@@ -16,20 +13,11 @@ public class Song implements Serializable{
     public Song() {
     }
 
-    public Song(int id, String nameSong, String authorSong, String singerSong, String timeSong) {
-        this.id = id;
+    public Song(String nameSong, String authorSong, String singerSong, String timeSong) {
         this.nameSong = nameSong;
         this.authorSong = authorSong;
         this.singerSong = singerSong;
         this.timeSong = timeSong;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNameSong() {
@@ -66,6 +54,6 @@ public class Song implements Serializable{
 
     @Override
     public String toString() {
-        return this.nameSong+"\n"+this.authorSong+"\n"+this.singerSong+"\n"+this.timeSong;
+        return this.nameSong+"\n"+this.authorSong+"\n"+this.singerSong+"\n"+this.timeSong+"\n";
     }
 }
