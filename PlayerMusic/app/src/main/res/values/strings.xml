@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PlayerMusic</string>
+    <string name="text_draff">No No No No</string>
+    <string name="text_playlist">Playlist</string>
+    <string name="text_album">Album</string>
+    <string name="text_start_music">00:00</string>
+    <string name="text_stop_music">00:00</string>
+    <string name="text_error">hung</string>
+    <string name="text_zing_beemob">Zing BeeMob</string>
+    <string name="text_line">---------------</string>
+</resources>
