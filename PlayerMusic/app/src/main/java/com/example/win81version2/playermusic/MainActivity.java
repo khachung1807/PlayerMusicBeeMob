@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TabHost;
 
@@ -28,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<File> songList;
     FrameLayout frameLayoutFragment;
     ArrayAdapter<String> arrayAdapter;
-    ImageButton imageButtonPlay;
-    ImageButton imageButtonStop;
     private PlayerMusicService playerMusicService;
     private boolean mBound;
 
@@ -105,20 +102,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         songList = new ArrayList<File>();
-
-        imageButtonPlay = (ImageButton) findViewById(R.id.image_button_play_music_play);
-        imageButtonStop = (ImageButton) findViewById(R.id.image_button_play_music_run);
         songList = playerMusicService.findAllSong(Environment.getExternalStorageDirectory());
         listViewSong = (ListView) findViewById(R.id.list_view_song);
         items = new String[songList.size()];
+
         for (int i = 0; i < songList.size(); i++) {
-            //Toast.makeText(ShowAllMusicActivity.this, mySong.get(i).toString(), Toast.LENGTH_LONG).show();
             items[i] = songList.get(i).toString().replace(".mp3", "").replace(".wav", "");
             arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),
                     R.layout.item_song, R.id.text_item_title, items);
             listViewSong.setAdapter(arrayAdapter);
             arrayAdapter.notifyDataSetChanged();
-            //load all music on device
         }
     }
 

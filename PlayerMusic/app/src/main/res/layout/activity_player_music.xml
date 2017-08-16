@@ -64,23 +64,6 @@
             android:src="@drawable/image_repeat" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/image_button_play_music_run"
-            android:layout_width="@dimen/image_button_big"
-            android:layout_height="@dimen/image_button_big"
-            android:layout_gravity="center"
-            android:background="@color/colorImageButton"
-            android:scaleType="fitXY"
-            android:src="@drawable/image_run" />
-    </LinearLayout>
-
     <TextView
         android:id="@+id/text_play_music_start"
         android:layout_width="wrap_content"
